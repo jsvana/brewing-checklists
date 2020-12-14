@@ -1,0 +1,141 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{calc}
+\usepackage[margin={1in,1in}]{geometry}
+\usepackage{enumitem}
+\usepackage{fixltx2e}
+\usepackage[unicode]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage[table]{xcolor}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{titling}
+
+\title{Brewing Procedures}
+\author{}
+\date{}
+
+\begin{document}
+  \setlength{\parindent}{0pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\multicolsep}{1mm}
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0pt}
+
+  \rowcolors{1}{gray!20!white}{gray!35!white}
+
+  \fontfamily{phv}\selectfont%
+
+  \newenvironment{cldescription}{\begin{description}[topsep=0pt,noitemsep,leftmargin=0pt,label={}]\fontfamily{phv}}{\normalfont\end{description}}
+
+  \newenvironment{clitemize}{\begin{itemize}[topsep=0pt,noitemsep,leftmargin=0pt,label={}]}{\end{itemize}}
+  \newcommand{\clitem}[2]{\item#1 \dotfill \textbf{#2}}
+
+  \newlist{packlist}{itemize}{1}
+  \setlist[packlist]{noitemsep,topsep=0pt,leftmargin=1.55em,label=$\square$}
+
+  \newlist{notelist}{itemize}{1}
+  \setlist[notelist]{noitemsep,topsep=0pt,leftmargin=1.55em,label=\scriptsize$\blacksquare$}
+
+  \newcommand{\colorlistbox}[2]{\colorbox{#1}{\parbox{\linewidth}{#2}}}
+  \newcommand{\internationalbox}[1]{\colorlistbox{green!60!black}{#1}}
+  \newcommand{\packlistbox}[1]{\colorlistbox{green!20!white}{\partnote{PACK LIST}#1}}
+
+  \newcommand{\columnnote}[2]{\color{white}\colorbox{#1}{\strut\makebox[\columnwidth]{\raisebox{-1pt}{#2}}}\color{black}}
+  \newcommand{\importantnote}[1]{\columnnote{red!80!black}{#1}}
+  \newcommand{\partnote}[1]{\columnnote{green!60!black}{#1}}
+
+  \newcommand{\columnheading}[2]{\color{white}\colorbox{#1}{\strut\makebox[\columnwidth]{\raisebox{-1pt}{\textbf{#2}}}}\color{black}}
+  \newcommand{\partheading}[1]{\columnheading{green!80!red}{#1}}
+  \newcommand{\checklistheading}[1]{\color{white}\columnheading{black}{#1}\color{black}}
+  \newcommand{\emptyheading}{\columnheading{white}{}}
+
+  \newcommand{\importantheading}[1]{\columnheading{red!80}{#1}}
+
+  \begin{titlingpage}
+    \maketitle
+  \end{titlingpage}
+
+  \pagebreak
+
+  {\LARGE Contents}
+
+  \begin{enumerate}
+    \item Brew Day
+    \begin{enumerate}[label*=\arabic*.]
+      \item Equipment \& Materials \dotfill \textbf{2}
+      \item Brew \dotfill \textbf{2}
+    \end{enumerate}
+  \end{enumerate}
+
+  \pagebreak%
+
+  {\Large \checklistheading{BREW DAY}}
+
+  \begin{multicols*}{2}
+    \checklistheading{EQUIPMENT \& MATERIALS}
+
+    \partheading{WEEK OF}
+    \begin{clitemize}
+      \clitem{Recipe}{DECIDE}
+      \clitem{Grains \& hops}{ORDER}
+      \clitem{Propane}{FILL}
+    \end{clitemize}
+
+    \partheading{DAY BEFORE}
+    \begin{clitemize}
+      \clitem{Lighter}{CHARGE}
+      \clitem{Brew table}{CLEAN}
+      \clitem{Brew kettle}{CLEAN}
+      \clitem{MLT}{CLEAN}
+      \clitem{HLT}{CLEAN}
+      \clitem{Vorlauf pitcher}{CLEAN}
+      \clitem{Hoses}{COLLECT \& CLEAN}
+      \clitem{Brew area}{CLEAN}
+      \clitem{Ice}{BUY}
+      \clitem{Distilled water}{$\geq$ 12 GAL.}
+    \end{clitemize}
+
+    \partheading{DAY OF}
+    \begin{clitemize}
+      \clitem{Recipe materials}{PICK UP}
+      \clitem{Grains}{WEIGH}
+    \end{clitemize}
+
+    \checklistheading{BREW}
+
+    \begin{clitemize}
+      \clitem{Yeast}{REMOVE FROM FRIDGE}
+      \clitem{Windows}{OPEN}
+      \clitem{Fans}{PLACE \& TURN ON}
+      \clitem{Brew kettle}{FILL WITH 4--5 GAL. DIST. WATER}
+      \clitem{Propane}{CONNECT TO BURNER}
+      \clitem{Burner}{START}
+      \clitem{Water}{HEAT TO REQ. STRIKE TEMP.}
+      \clitem{Grist}{COMBINE IN GRAIN BUCKET}
+      \clitem{MLT \& HLT}{SETUP}
+      \partnote{WAIT FOR STRIKE WATER TO HEAT}
+      \clitem{Strike water}{ADD REQ. AMT. TO MLT}
+      \clitem{Burner}{OFF}
+      \clitem{Grist}{SLOWLY ADD TO MLT WHILE STIRRING}
+      \importantnote{AVOID CLUMPS}
+      \clitem{MLT}{COVER}
+      \clitem{MLT temp.}{NOTE}
+      \clitem{Timer}{START}
+      \clitem{Brew kettle}{FILL WITH 6.5 GAL. DIST. WATER}
+      \clitem{Burner}{START}
+      \partnote{WAIT FOR SPARGE WATER TO HEAT}
+      \clitem{Sparge water}{TRANSFER TO HLT}
+      \clitem{HLT}{MOVE ABOVE MLT}
+      \clitem{HLT temp.}{NOTE}
+      \clitem{Sparge arm}{CONNECT TO HLT}
+      \partnote{WAIT FOR MASH TO COMPLETE}
+      \clitem{Drain hose}{CONNECT TO MLT}
+      \clitem{Vorlauf}{AS REQ.}
+    \end{clitemize}
+
+  \end{multicols*}
+\end{document}
